@@ -3,7 +3,7 @@
 # 需要配置 CA 证书并启用 MitM 开关.
 # 您可以在使用后手动将本模块禁用，以免产生不必要的MITM.
 
-hostname = api.m.jd.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, note.youdao.com
+hostname = api.m.jd.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, note.youdao.com, api.gamer.com.tw, account.wps.cn
 
 
 
@@ -30,15 +30,9 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 http-response https://note.youdao.com/yws/(mapi/payment|api/self) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/ydybj.js,tag=有道云笔记VIP
 
 
-# 动画疯 去广告
+# 动画疯 去广告（by NobyDa）
 http-request https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js,tag=动画疯去广告
 http-response https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js,tag=动画疯去广告
 
 # > WPS (By eHpo)
 http-response ^https://account.wps.*/api/users/ requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,tag=WPS
-
-# > 人人视频 解锁AI原画 (by@george Jiang & R)
-http-response ^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll|\/rrtv-video\/v4plus\/season\/detail) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/rrtv.js,tag=人人视频AI原画
-
-# 人人视频 旧版本api限制解除 id77
-http-request ^https:\/\/api\.rr\.tv script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/Script/rrtv.js, tag=人人视频 旧版本api限制解除
