@@ -3,7 +3,7 @@
 # 需要配置 CA 证书并启用 MitM 开关.
 # 您可以在使用后手动将本模块禁用，以免产生不必要的MITM.
 
-hostname = api.m.jd.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com
+hostname = api.m.jd.com, trade-acs.m.taobao.com, ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, note.youdao.com
 
 
 
