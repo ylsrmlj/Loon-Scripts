@@ -1,5 +1,5 @@
 # 跳过片头广告
-[Rule]
+#[Rule]
 URL-REGEX,https?:\/\/.+.googlevideo.com\/ptracking\?pltype=adhost,REJECT
 URL-REGEX,https?:\/\/.+.youtube.com\/api\/stats\/ads,REJECT
 URL-REGEX,https?:\/\/.+.youtube.com\/get_midroll_,REJECT
@@ -21,4 +21,4 @@ URL-REGEX,https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier),REJECT
 ^https?+:\/\/youtubei\.googleapis\.com\/youtubei\/.+?(?>ad|log)_ - reject-200
 
 [MITM]
-hostname = *.youtube.com, youtubei.googleapis.com
+hostname = *.googlevideo.com, *.youtube.com, youtubei.googleapis.com
